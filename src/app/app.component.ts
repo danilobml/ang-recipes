@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Wonder Recipes';
-  showPage:string="recipes"
-
-  onNavClicked(show:string):void{
-    this.showPage = show
-  }
 }
