@@ -14,6 +14,7 @@ import { RecipeComponent } from './recipe-book/recipe/recipe.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { SelectRecipeComponent } from './recipe-book/select-recipe/select-recipe.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,10 @@ import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.compo
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
