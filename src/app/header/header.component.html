@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a class="nav-item" routerLink="/recipes" routerLinkActive="active"
+          <a class="nav-item" routerLink="/recipes" routerLinkActive="active" *ngIf="isLoggedin"
             >Recipes</a
           >
         </li>
@@ -20,9 +20,21 @@
             >Shopping list</a
           >
         </li>
+        <li>
+          <a
+            class="nav-item"
+            routerLink="auth"
+            routerLinkActive="active"
+            *ngIf="!isLoggedin"
+            >Login / SignUp</a
+          >
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appDropdown>
+        <li>
+          <a style="cursor: pointer;" *ngIf="isLoggedin">Logout</a>
+        </li>
+        <li class="dropdown" appDropdown *ngIf="isLoggedin">
           <a style="cursor: 'pointer'" class="dropdown-toggle"
             >Menu <span class="caret"></span
           ></a>
