@@ -32,7 +32,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a style="cursor: pointer;" *ngIf="isLoggedin">Logout</a>
+          <a style="cursor: pointer;" *ngIf="isLoggedin" (click)="onLogout()">Logout</a>
         </li>
         <li class="dropdown" appDropdown *ngIf="isLoggedin">
           <a style="cursor: 'pointer'" class="dropdown-toggle"
