@@ -52,4 +52,8 @@ export class AuthComponent {
     );
     this.loginForm.reset();
   }
+
+  onHandleClose() {
+    this.error = null;
+  }
 }
