@@ -20,9 +20,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.userSub = this.authService.user.subscribe((userData: User) => {
+    this.userSub = this.authService.user.subscribe((userData) => {
       if (userData) {
         this.isLoggedin = true;
+      } else {
+        this.isLoggedin = false;
       }
     });
   }
@@ -33,7 +35,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
-    this.isLoggedin = false;
   }
 
   onSaveRecipesData() {
