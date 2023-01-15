@@ -1,24 +1,20 @@
-import { AlertComponent } from './shared/alert/alert.component';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { RecipesModule } from './recipe-book/recipes.module';
+import { AlertComponent } from './shared/alert/alert.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
-import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail.component';
-import { RecipeComponent } from './recipe-book/recipe/recipe.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { SelectRecipeComponent } from './recipe-book/select-recipe/select-recipe.component';
-import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
+import { RecipesRoutingModule } from './recipe-book/recipes-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,23 +22,19 @@ import { AuthComponent } from './auth/auth.component';
     HeaderComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
-    RecipeComponent,
     DropdownDirective,
-    SelectRecipeComponent,
-    RecipeEditComponent,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
+    RecipesModule,
+    RecipesRoutingModule,
   ],
   providers: [
     {
