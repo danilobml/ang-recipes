@@ -1,6 +1,6 @@
-# NG Recipe Book
+# Ang Recipe Book
 
-## NG Recipe Book is a recipes book app. It was done with Angular and Bootstrap, with a Firebase database.  
+## Ang Recipe Book is a recipes book app. It was done with Angular and Bootstrap, with a Firebase database.  
 
 ## Live version:
 
