@@ -3,8 +3,9 @@ import { BehaviorSubject, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { AuthData, AuthResponse } from './auth.model';
+import { AuthResponse, AuthData } from './auth.model';
 import { User } from './user.model';
+import { environment } from 'src/environments/environments';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class AuthService {
   signUpUser(user: AuthData) {
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwK2yt-joq_VQFMeuqCAvd7iFzvNINIxQ',
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPIKey}`,
         user
       )
       .pipe(
@@ -36,7 +37,7 @@ export class AuthService {
   signInUser(user: AuthData) {
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDwK2yt-joq_VQFMeuqCAvd7iFzvNINIxQ',
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPIKey}`,
         user
       )
       .pipe(

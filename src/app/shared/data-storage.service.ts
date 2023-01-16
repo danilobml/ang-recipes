@@ -4,17 +4,12 @@ import { exhaustMap, map, take, tap } from 'rxjs';
 
 import { RecipeService } from '../recipe-book/recipes.service';
 import { Recipe } from '../recipe-book/recipe.model';
-import { AuthService } from './../auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataStorageService {
-  constructor(
-    private http: HttpClient,
-    private recipeService: RecipeService,
-    private authService: AuthService
-  ) {}
+  constructor(private http: HttpClient, private recipeService: RecipeService) {}
 
   saveRecipesData() {
     const recipeList = this.recipeService.getRecipes();
